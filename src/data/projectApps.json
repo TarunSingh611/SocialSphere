@@ -1,0 +1,75 @@
+[
+    {
+      "name": "dictionaryApp",
+      "type": "jsApp",
+      "description": "A basic JavaScript application that functions as a searchable dictionary with definitions.",
+      "image": "/projects/dictionary.png",
+      "framework": "",
+      "tech": "JavaScript",
+      "level": "easy"
+    },
+    {
+      "name": "notesApp",
+      "type": "jsApp",
+      "description": "A JavaScript application for creating, managing, and storing notes.",
+      "image": "/projects/notes.png",
+      "framework": "", 
+      "tech": "JavaScript",
+      "level": "easy"
+    },
+    {
+      "name": "paragraphApp",
+      "type": "jsApp",
+      "description": "A JavaScript application with possible functionalities related to text manipulation or paragraph editing.",
+      "image": "/projects/paraGen.png",
+      "framework": "", 
+      "tech": "JavaScript",
+      "level": "easy"
+    },
+    {
+      "name": "passwordGeneratorApp",
+      "type": "jsApp",
+      "description": "A JavaScript application that generates secure passwords.",
+      "framework": "",
+      "image": "/projects/passwordGen.png", 
+      "tech": "JavaScript",
+      "level": "easy"
+    },
+    {
+      "name": "pollApp",
+      "type": "jsApp",
+      "description": "A JavaScript application for creating and managing polls, allowing users to vote on options.",
+      "framework": "",
+      "image": "/projects/poll.png", 
+      "tech": "JavaScript",
+      "level": "easy"
+    },
+    {
+      "name": "randomcolorgenApp",
+      "type": "jsApp",
+      "description": "A JavaScript application that generates random colors.",
+      "framework": "",
+      "image": "/projects/colorGen.png", 
+      "tech": "JavaScript",
+      "level": "easy"
+    },
+    {
+      "name": "stopwatchApp",
+      "type": "jsApp",
+      "description": "A JavaScript application that functions as a stopwatch for measuring elapsed time.",
+      "framework": "",
+      "image": "/projects/stopwatch.png", 
+      "tech": "JavaScript",
+      "level": "easy"
+    },
+    {
+      "name": "netflixApp",
+      "type": "reactApp",
+      "description": "A React application for viewing and interacting with Netflix content.",
+      "framework": "React",
+      "image": "/projects/boxoffice.png", 
+      "tech": "react",
+      "level": "medium"
+    }
+  ]
+  

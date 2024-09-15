@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, useRef } from "react";
 import { toast } from "react-toastify";
-import { setProfilePhoto, setCoverPhoto } from "../../redux/slicers/authSlice";
+// import { setProfilePhoto, setCoverPhoto } from "../../redux/slicers/authSlice";
 import apiSetPicture from "../../api/user/apiSetPicture";
 import { useDispatch } from "react-redux";
 import AvatarEditor from "react-avatar-editor";
@@ -19,18 +19,18 @@ export default function UploadButtons() {
   ) => {
     if (!file) return;
 
-    apiSetPicture(file, pictureType).then((res: any) => {
-      if (res.statusCode !== 200) {
-        toast.error(res.message);
-      } else {
-        toast.success(res.message);
-        dispatch(
-          pictureType === "profilePicture"
-            ? setProfilePhoto(res.picture)
-            : setCoverPhoto(res.picture)
-        );
-      }
-    });
+    // apiSetPicture(file, pictureType).then((res: any) => {
+    //   if (res.statusCode !== 200) {
+    //     toast.error(res.message);
+    //   } else {
+    //     toast.success(res.message);
+    //     dispatch(
+    //       pictureType === "profilePicture"
+    //         ? setProfilePhoto(res.picture)
+    //         : setCoverPhoto(res.picture)
+    //     );
+    //   }
+    // });
   };
 
   const handleConfirmImage = (editedImage: string) => {
@@ -38,7 +38,7 @@ export default function UploadButtons() {
       editorRef.current.getImage().toBlob((blob: Blob | null) => {
         if (blob) {
 
-          const binaryData = atob(editedImage.split(',')[1]);
+          const binaryData = atob(editedImage?.split(',')[1]);
   
           const arrayBuffer = new ArrayBuffer(binaryData.length);
           const uint8Array = new Uint8Array(arrayBuffer);

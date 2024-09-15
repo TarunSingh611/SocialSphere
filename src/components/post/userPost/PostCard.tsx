@@ -8,15 +8,14 @@ import PropTypes from "prop-types";
 import apiGetUserName from "@/api/user/apiGetUserName";
 import apiLike from "@/api/Reaxtion/Like";
 import { useDispatch, useSelector } from "react-redux";
-import { setSidePaneOpen, setSidePaneHead, setSidePaneBody, setSidePaneFoot } from "@/redux/slicers/sidePaneSlice";
 import { toast } from "react-toastify";
 
-const likeIconUrl = secrets.NEXT_PUBLIC_ICON_URL + "heart.png";
-const likedIconUrl = secrets.NEXT_PUBLIC_ICON_URL + "heartLike.png";
-const commentIconUrl = secrets.NEXT_PUBLIC_ICON_URL + "comments.png";
-const shareIconUrl = secrets.NEXT_PUBLIC_ICON_URL + "share.png";
-const reportIconUrl = secrets.NEXT_PUBLIC_ICON_URL + "menu.png";
-const fullScreenIconUrl = secrets.NEXT_PUBLIC_ICON_URL + "fullscreen.png";
+const likeIconUrl = "/icons/heart.png";
+const likedIconUrl = "/icons/heartLike.png";
+const commentIconUrl = "/icons/comments.png";
+const shareIconUrl =  "/icons/share.png";
+const reportIconUrl =   "/icons/menu.png";
+const fullScreenIconUrl = "/icons/fullscreen.png";
 
 const PostCard = ({ post, setPost = () => { } }: any) => {
     const dispatch = useDispatch();
@@ -53,10 +52,10 @@ const PostCard = ({ post, setPost = () => { } }: any) => {
     const handleComment = (post: any) => {
 
         postCardRef.current && postCardRef.current.scrollIntoView({ behavior: "smooth" });
-        dispatch(setSidePaneOpen(true));
-        dispatch(setSidePaneHead("Comments"));
-        dispatch(setSidePaneBody({ postId: post._id }));
-        dispatch(setSidePaneFoot({ likeCount: post.likeCount || 0, commentCount: post.commentCount || 0 }));
+        // dispatch(setSidePaneOpen(true));
+        // dispatch(setSidePaneHead("Comments"));
+        // dispatch(setSidePaneBody({ postId: post._id }));
+        // dispatch(setSidePaneFoot({ likeCount: post.likeCount || 0, commentCount: post.commentCount || 0 }));
 
     };
 
@@ -84,17 +83,17 @@ const PostCard = ({ post, setPost = () => { } }: any) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
 
-                    dispatch(setSidePaneHead("Comments"));
-                    dispatch(setSidePaneBody({ postId: post._id }));
-                    dispatch(setSidePaneFoot({ likeCount: post.likeCount || 0, commentCount: post.commentCount || 0 }));
+                    // dispatch(setSidePaneHead("Comments"));
+                    // dispatch(setSidePaneBody({ postId: post._id }));
+                    // dispatch(setSidePaneFoot({ likeCount: post.likeCount || 0, commentCount: post.commentCount || 0 }));
 
 
                 } else {
                     if (!postCardRef?.current?.id) {
 
-                        dispatch(setSidePaneOpen(false));
-                        dispatch(setSidePaneHead(""));
-                        dispatch(setSidePaneFoot({}));
+                        // dispatch(setSidePaneOpen(false));
+                        // dispatch(setSidePaneHead(""));
+                        // dispatch(setSidePaneFoot({}));
 
                     }
                 }

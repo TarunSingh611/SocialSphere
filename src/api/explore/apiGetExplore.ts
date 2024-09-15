@@ -4,7 +4,7 @@ async function apiGetExplore() {
     const options = {
         method: 'GET' as const,
       };
-      return await makeApiRequest(`/Explore`, options);
+      return await makeApiRequest(`/explore`, options);
 }
 
 export default apiGetExplore

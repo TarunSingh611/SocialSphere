@@ -1,3 +1,4 @@
+'use client';
 import PostCard from '@/components/post/userPost/PostCard'
 const UserFeed = ({feed}:any) => {
     return (

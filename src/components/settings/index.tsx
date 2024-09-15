@@ -6,6 +6,8 @@ import General from "./General";
 import UploadButtons from "./UploadButtons";
 import apiUpdateUser from "@/api/user/apiUpdateUser";
 import { toast } from "react-toastify";
+import { setUser } from "@/redux/slicers/authSlice";
+import { useDispatch } from "react-redux";
 interface Setting {
   key: string;
   label: string;
@@ -24,6 +26,7 @@ interface ShowSettings {
 }
 
 const Settings: React.FC<{ user: any }> = ({ user }) => {
+  const dispatch = useDispatch();
   const [showSettings, setShowSettings] = useState<ShowSettings>(
     settingsData.reduce((acc, setting) => {
       acc[setting.key] = false;
@@ -41,20 +44,21 @@ const Settings: React.FC<{ user: any }> = ({ user }) => {
   const handleSubmit = (values: any) => {
     apiUpdateUser(values)
       .then((res: any) => {
-        if (res.statusCode === 200) {
-          toast.success(res.message);
-        } else if (res.statusCode === 400) {
-          toast.error(res.message);
-        } else if (res.statusCode === 500) {
-          toast.error(res.message);
-        } else if (res.statusCode === 404) {
-          toast.error(res.message);
+        if (res?.data && res.data?.statusCode === 200) {
+          dispatch(setUser({ ...user, ...values }));         
+          toast.success(res.data?.result?.message);
+        } else if (res.data?.statusCode === 400) {
+          toast.error(res.data?.result?.message);
+        } else if (res.data?.statusCode === 500) {
+          toast.error(res.data?.result?.message);
+        } else if (res.data?.statusCode === 404) {
+          toast.error(res.data?.result?.message);
         } else {
-          toast.error("unkopnwn error");
+          toast.error("unknown error");
         }
       })
       .catch(() => {
-        toast.error("unkopnwn error");
+        toast.error("unknown error");
       });
   };
 
@@ -63,7 +67,7 @@ const Settings: React.FC<{ user: any }> = ({ user }) => {
       <UploadButtons />
       {settingsData.map(({ key, label, component: Component }) => (
         <div key={key} className="mb-4">
-          <div key={key} className="flex justify-between w-full">
+          <div key={key} className="flex justify-between ">
             <label className="mr-2" htmlFor={key}>
               {label}:
             </label>

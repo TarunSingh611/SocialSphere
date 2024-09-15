@@ -1,0 +1,132 @@
+[
+    {
+      "id": 1,
+      "title": "Two Sum",
+      "problemStatement": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.",
+      "testCases": [
+        {
+          "input": "nums = [2, 7, 11, 15], target = 9",
+          "output": "[0, 1]"
+        },
+        {
+          "input": "nums = [3, 2, 4], target = 6",
+          "output": "[1, 2]"
+        }
+      ],
+      "constraints": "- 2 <= nums.length <= 10^4\n- -10^9 <= nums[i] <= 10^9\n- -10^9 <= target <= 10^9\n- Only one valid answer exists.",
+      "solutions": [
+        {
+          "code": "// Solution in TypeScript\n\nfunction twoSum(nums: number[], target: number): number[] {\n  const numMap = new Map();\n\n  for (let i = 0; i < nums.length; i++) {\n    const complement = target - nums[i];\n    if (numMap.has(complement)) {\n      return [numMap.get(complement), i];\n    }\n    numMap.set(nums[i], i);\n  }\n\n  return [];\n}",
+          "language": "typescript"
+        }
+      ],
+      "approaches": [
+        {
+          "description": "Use a hash map to store the complement of each number and its index. If the complement is found in the hash map, return the indices of the two numbers."
+        }
+      ],
+      "discussions": [
+        {
+          "user": "user1",
+          "timestamp": "2023-06-11T10:30:00Z",
+          "content": "Here's an alternative solution using the two-pointer approach:"
+        }
+      ],
+      "difficulty": "Easy",
+      "type": "Array",
+      "tags": ["Hash Table", "Two Pointers"],
+      "dateCreated": "2023-06-11T00:00:00Z" 
+    },
+    {
+      "id": 2,
+      "title": "Longest Substring Without Repeating Characters",
+      "problemStatement": "Given a string `s`, find the length of the longest substring without repeating characters.",
+      "testCases": [
+        {
+          "input": "s = \"abcabcbb\"",
+          "output": "3" 
+        },
+        {
+          "input": "s = \"pwwkew\"",
+          "output": "3" 
+        }
+      ],
+      "constraints": "0 <= s.length <= 5 * 10^4\n- s consists of ASCII characters.",
+      "solutions": [
+     
+      ],
+      "approaches": [
+
+      ],
+      "discussions": [],
+      "difficulty": "Medium",
+      "type": "String",
+      "tags": ["Sliding Window", "Hash Table"],
+      "dateCreated": "2023-06-12T12:00:00Z" 
+    },
+    {
+        "id": 3,
+        "title": "Reverse Integer",
+        "problemStatement": "Given a signed 32-bit integer `x`, return the reversed integer.",
+        "testCases": [
+          {
+            "input": "x = 123",
+            "output": "321"
+          },
+          {
+            "input": "x = -123",
+            "output": "-321"
+          },
+          {
+            "input": "x = 1200000003", 
+            "output": "0"
+          }
+        ],
+        "constraints": "-2^31 <= x <= 2^31 - 1",
+
+        "solutions": [
+            {
+                "code": "// Solution in JavaScript\n\nfunction reverse(x) {\n  let reversed = 0;\n  let isNegative = x < 0;\n  x = Math.abs(x);\n  while (x > 0) {\n    const digit = x % 10;\n    reversed = reversed * 10 + digit;\n    x = Math.floor(x / 10);\n  }\n  return isNegative ? -reversed : reversed;\n}",
+                "language": "javascript"
+            }
+            ],
+            "approaches": [
+            {
+                "description": "Iterate through the digits of the integer one by one, extracting the last digit and adding it to a reversed integer variable. Handle negative numbers separately by checking the sign before reversing."
+            }
+            ],
+            "discussions": [],
+            "difficulty": "Easy",
+            "type": "Integer",
+            "tags": ["Math"],
+            "dateCreated": "2023-06-12T14:00:00Z"
+        },
+        {
+        "id": 4,
+        "title": "Valid Palindrome",
+        "problemStatement": "Given a string s, determine whether it is a palindrome, considering only alphanumeric characters and ignoring case sensitivity.",
+        "testCases": [
+        {
+        "input": "s = A man, a plan, a canal: Panama",
+        "output": "true"
+        },
+        {
+        "input": "s = race a car",
+        "output": "false"
+        }
+        ],
+        "constraints": "s may be empty.",
+        "solutions": [
+        
+        ],
+        "approaches": [
+      
+        ],
+        "discussions": [],
+        "difficulty": "Easy",
+        "type": "String",
+        "tags": ["Two Pointers"],
+        "dateCreated": "2023-06-13T10:00:00Z"
+        }
+  ]
+  

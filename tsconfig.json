@@ -29,7 +29,7 @@
     },
     "strict": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts", ".next/types/app/userSpace/profile/test/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts", ".next/types/app/userSpace/profile/test/page.tsx", "src/app/blogs/[blogId]", "src/components/authentication/resetPassword"],
   "exclude": [
     "node_modules"
   ]

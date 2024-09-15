@@ -7,7 +7,6 @@ import FollowButton from "../followButton/FollowButton";
 
 const ProfileCard = ({ user, setUser = () => { }, self = {} }: any) => {
 
-
   return (user &&
     <div className="bg-whiterounded-lg relative shadow-md p-6">
       <div className="absolute bg-gray-200 left-0 top-0  w-full h-48 sm:h-32 md:h-1/3 lg:h-32 !object-cover">
@@ -17,7 +16,7 @@ const ProfileCard = ({ user, setUser = () => { }, self = {} }: any) => {
             user?.coverPhoto
               ? secrets.NEXT_PUBLIC_PROFILE_IMAGE_URL +
               user?.coverPhoto
-              : secrets.NEXT_PUBLIC_PROFILE_DEFAULTER + "Cover.webp"
+              : "/defaulters/Cover.webp"
           }
           alt="Profile"
         />

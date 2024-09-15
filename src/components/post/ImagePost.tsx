@@ -26,7 +26,7 @@ export default function ImagePost() {
   };
 
   const handleHashtagsChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const rawHashtags = e.target.value.split(",");
+    const rawHashtags = e.target.value?.split(",");
     const cleanedHashtags = rawHashtags.map((tag) => tag.trim());
     setHashtags(cleanedHashtags);
   };
@@ -54,7 +54,7 @@ export default function ImagePost() {
       editorRef.current.getImage().toBlob((blob: Blob | null) => {
         if (blob) {
 
-          const binaryData = atob(editedImage.split(',')[1]);
+          const binaryData = atob(editedImage?.split(',')[1]);
   
           const arrayBuffer = new ArrayBuffer(binaryData.length);
           const uint8Array = new Uint8Array(arrayBuffer);
