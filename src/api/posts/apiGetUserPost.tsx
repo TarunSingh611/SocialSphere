@@ -1,11 +1,11 @@
 import makeApiRequest from '@/services/apiReq';
 
-const apiPostImage = async (userId :any ,pno:any) => {
+const apiPostImage = async (pno:any) => {
   
   const options = {
     method: 'GET' as const,
   };
-  return await makeApiRequest(`/post/userPost?userId=${userId}&&pno=${pno}`, options);
+  return await makeApiRequest(`/post/userPost?pno=${pno}`, options);
 };
 
 export default apiPostImage;

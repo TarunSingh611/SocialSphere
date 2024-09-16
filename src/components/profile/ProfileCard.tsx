@@ -78,7 +78,7 @@ const ProfileSearchCard = ({ user }: any) => {
   const [userLocal, setUser] = useState({} as any);
   const self = useSelector((state: any) => state.auth.user);
   const handleCardClick = () => {
-    router.push(`/userSpace/profile/${user._id}`);
+    router.push(`/profile/${user._id}`);
   };
   useEffect(() => {
     if (Object.keys(userLocal).length === 0 && Object.keys(user).length) {
