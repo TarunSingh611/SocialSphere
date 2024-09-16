@@ -21,7 +21,7 @@ const UserProfile = ({ user ,self ={} }: any) => {
     if (user) {
       let pno = Posts ? Posts.length : 0;
       setPrivate(false);
-      apiGetUserPosts(user?._id, pno)
+      apiGetUserPosts(pno)
         .then((res: any) => {
           if (res.statusCode === 200) {
             setPost(res.posts);
