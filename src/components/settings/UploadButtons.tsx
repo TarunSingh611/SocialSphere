@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useRef } from "react";
+import { useState, ChangeEvent, useRef } from "react";
 import { toast } from "react-toastify";
 // import { setProfilePhoto, setCoverPhoto } from "../../redux/slicers/authSlice";
 import apiSetPicture from "../../api/user/apiSetPicture";
@@ -19,18 +19,18 @@ export default function UploadButtons() {
   ) => {
     if (!file) return;
 
-    // apiSetPicture(file, pictureType).then((res: any) => {
-    //   if (res.statusCode !== 200) {
-    //     toast.error(res.message);
-    //   } else {
-    //     toast.success(res.message);
-    //     dispatch(
-    //       pictureType === "profilePicture"
-    //         ? setProfilePhoto(res.picture)
-    //         : setCoverPhoto(res.picture)
-    //     );
-    //   }
-    // });
+    apiSetPicture(file, pictureType).then((res: any) => {
+      if (res.statusCode !== 200) {
+        toast.error(res.message);
+      } else {
+        toast.success(res.message);
+        // dispatch(
+        //   pictureType === "profilePicture"
+        //     ? setProfilePhoto(res.picture)
+        //     : setCoverPhoto(res.picture)
+        // );
+      }
+    });
   };
 
   const handleConfirmImage = (editedImage: string) => {
@@ -79,7 +79,8 @@ export default function UploadButtons() {
     setPicType(type);
   };
 
-  return picture ? (
+  return picture ? 
+  (
     <>
       <ImageInput
         image={picture}

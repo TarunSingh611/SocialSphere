@@ -1,7 +1,6 @@
 import makeApiRequest from '@/services/apiReq';
 import {NEXT_USER_LOGIN} from "@/constants/api"
 const apiLogin = async (req,res) => {
-  debugger
   const {email,password}= req.body
   const options={
     method: 'POST' as const,

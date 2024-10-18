@@ -1,5 +1,5 @@
 import React from 'react'
-import PostCard from './PostCard'
+import PostCard from '@/components/post/PostCard/index'
 const UserPost = ({ posts }: any) => {
 
 

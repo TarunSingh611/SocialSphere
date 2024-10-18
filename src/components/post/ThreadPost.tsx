@@ -1,9 +1,10 @@
+import UnderConstruction from "../misc/pageBreak/UnderConstruction";
 
 export default function ThreadPost() {
 
     return (
         <div>
-           Thread
+            <UnderConstruction/>
         </div>
     )
 }

@@ -9,7 +9,7 @@ const ProfileCard = ({ user, setUser = () => { }, self = {} }: any) => {
 
   return (user &&
     <div className="bg-whiterounded-lg relative shadow-md p-6">
-      <div className="absolute bg-gray-200 left-0 top-0  w-full h-48 sm:h-32 md:h-1/3 lg:h-32 !object-cover">
+      <div className="absolute bg-gray-200 left-0 top-0  w-full h-48 sm:h-32 md:h-2/3 lg:h-32 !object-cover">
         <img
           className="w-full h-full object-cover"
           src={

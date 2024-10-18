@@ -99,7 +99,7 @@ export default function Login({setAuthType, onClose, setUserData }: any) {
   return (
     <>
       <AuthForm handleSubmit={handleSubmit} formConfig={formConfig} />
-      <div className="bg-purple-700 text-white text-center cursor-pointer" onClick={()=>handleSubmit({email:"demo" ,password :"demo"})}>Demo Login</div>
+      <div className="bg-purple-700 text-white text-center cursor-pointer" onClick={()=>handleSubmit({email:"demo@123.com" ,password :"demo"})}>Demo Login</div>
       {isLoading && <Loader/>}
     </>
   );
