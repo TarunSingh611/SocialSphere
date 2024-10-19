@@ -49,7 +49,7 @@ const ImageInput: React.FC<ImageInputProps> = ({
   }, [image]);
 
   return (
-    <div className="mb-4">
+    <div className="mb-4 sm:p-6">
       <label
         htmlFor="image"
         className="block text-sm font-medium text-gray-600"

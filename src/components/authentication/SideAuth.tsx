@@ -63,9 +63,11 @@ export default function SideAuth({ onClose , AuthType = 'signIn' }: any) {
       >
         <div className='w-full h-full' onClick={onClose}></div>
       </Grid>
-      <Grid item xs={12} sm={8} md={6} lg={4} xl={3} component={Paper} elevation={6} className='absolute top-0 right-0 h-full' square>
-          {getForm()}
-          {Copyright()} 
+      <Grid item xs={12} sm={8} md={6} lg={4} xl={3} component={Paper} elevation={6} className='absolute top-0 right-0 h-full flex !flex-col' square>
+      <div className="flex-grow">{getForm()}</div>
+          <div className="mt-auto mb-0">
+            {Copyright()} 
+          </div>
       </Grid> 
     </Grid>
   );

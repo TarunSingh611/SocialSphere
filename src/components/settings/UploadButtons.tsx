@@ -88,12 +88,12 @@ export default function UploadButtons() {
         editorRef={editorRef}
         onImageSubmit={handleConfirmImage}
       />
-      <button className="bg-blue-500 text-white px-4 py-2 rounded">
+      {/* <button className="bg-blue-500 text-white px-4 py-2 rounded">
         Reset
-      </button>
+      </button> */}
     </>
   ) : (
-    <div className="flex justify-around w-full my-8">
+    <div className="flex justify-around w-full my-8 gap-4">
       <label className="cursor-pointer">
         <input
           type="file"
@@ -101,7 +101,7 @@ export default function UploadButtons() {
           className="hidden"
           onChange={(e) => handleUpdateFile(e, "profilePicture")}
         />
-        <div className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer">
+        <div className="bg-blue-500 text-white text-sm px-4 py-2 rounded cursor-pointer">
           Update Profile Picture
         </div>
       </label>
@@ -112,7 +112,7 @@ export default function UploadButtons() {
           className="hidden"
           onChange={(e) => handleUpdateFile(e, "coverPhoto")}
         />
-        <div className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer">
+        <div className="bg-blue-500 text-white text-sm px-4 py-2 rounded cursor-pointer">
           Update Cover Picture
         </div>
       </label>
