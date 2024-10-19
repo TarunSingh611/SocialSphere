@@ -5,6 +5,7 @@ import {ProfileSearchCard} from "@/components/profile/ProfileCard";
 import { useSelector } from "react-redux";
 import apiGetExplore from "@/api/explore/apiGetExplore";
 import apiGetExploreSearch from "@/api/search/exploreSearch";
+import NoData from "@/components/misc/dataBreak/NoData";
 const Explore = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOverlayVisible, setIsSearchOverlayVisible] = useState(false);
@@ -104,7 +105,7 @@ const Explore = () => {
         </div>)
       ) : (
         <div className="">
-          {explore?.length > 0 && <GridPost posts={explore} />}
+          {explore?.length > 0 ? <GridPost posts={explore} /> : <NoData title="No posts to Show"/>}
         </div>
       )
       )}

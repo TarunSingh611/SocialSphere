@@ -1,5 +1,5 @@
 'use client';
-import PostCard from '@/components/post/userPost/PostCard'
+import PostCard from '@/components/post/PostCard'
 import NoData from '@/components/misc/dataBreak/NoData';
 const UserFeed = ({feed}:any) => {
     return (

@@ -87,8 +87,9 @@
 }
 
 .iconButton{
-  width: 72px;
+  width: 48px;
   height: auto;
+  align-items: center;
   aspect-ratio: 1/1;
   cursor: pointer;
 }
@@ -96,7 +97,7 @@
 @media screen and (max-width: 768px) {
 
   .iconButton{
-    width: 64px;
+    width: 48px;
     height: auto;
     aspect-ratio: 1/1;
     cursor: pointer;

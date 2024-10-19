@@ -84,6 +84,7 @@ const PostCard = ({ post, setPost = () => {} }: any) => {
                 caption={LocalPost.caption}
                 handleFullScreenToggle={handleFullScreenToggle}
             />
+            <p className="text-xs text-gray-500 m-2">{LocalPost?.caption}</p>
             <PostActions
                 post={LocalPost}
                 handleLike={handleLike}

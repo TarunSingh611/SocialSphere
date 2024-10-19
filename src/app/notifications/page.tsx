@@ -7,12 +7,15 @@ import { useSelector } from "react-redux";;
 import FollowRequest from "@/components/notification/FollowRequest.tsx";
 import Alerts from "@/components/notification/Alert.tsx";
 import LoadingDots from "@/components/misc/loadingDots";
+import RetroMaintainance from "@/components/misc/pageBreak/retroMaintainance";
 
 const Notifications = () => {
 
 
   const notifications = useSelector((state: any) => state?.notifications?.notifications);
   const [stacked, setStacked] = useState(true);
+
+  return (<RetroMaintainance/>)
 
   return (
     notifications ? (

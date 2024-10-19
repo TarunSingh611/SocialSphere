@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import FollowButton from "../followButton/FollowButton";
 
 const ProfileCard = ({ user, setUser = () => { }, self = {} }: any) => {
-
   return (user &&
     <div className="bg-whiterounded-lg relative shadow-md p-6">
       <div className="absolute bg-gray-200 left-0 top-0  w-full h-48 sm:h-32 md:h-2/3 lg:h-32 !object-cover">
@@ -39,21 +38,21 @@ const ProfileCard = ({ user, setUser = () => { }, self = {} }: any) => {
           <p
             className="w-full text-center text-lg font-bold overflow-hidden text-ellipsis"
           >
-            {user?.fullName}
+            {user?.firstName+" "+user?.lastName}
           </p>
         </div>
         <div className="flex w-full flex-col md:w-7/12 " >
           <div className="flex h-full w-full  flex-col sm:flex-row items-end space-x-4">
             <p className="flex w-full md:w-1/3 items-center flex-col">
-              <strong>{user?.followers?.length}</strong>
+              <strong>{user?.socialMediaData?.followers?.length}</strong>
               <strong>Followers</strong>
             </p>
             <p className="flex  w-full md:w-1/3 items-center flex-col">
-              <strong>{user?.following?.length}</strong>
+              <strong>{user?.socialMediaData?.following?.length}</strong>
               <strong>Following</strong>
             </p>
             <p className="flex w-full md:w-1/3 items-center flex-col">
-              <strong>{user?.postsCount}</strong>
+              <strong>{user?.socialMediaData?.postsCount}</strong>
               <strong>Posts</strong>
             </p>
           </div>
@@ -78,7 +77,7 @@ const ProfileSearchCard = ({ user }: any) => {
   const [userLocal, setUser] = useState({} as any);
   const self = useSelector((state: any) => state.auth.user);
   const handleCardClick = () => {
-    router.push(`/userSpace/profile/${user._id}`);
+    router.push(`/profile/${user._id}`);
   };
   useEffect(() => {
     if (Object.keys(userLocal).length === 0 && Object.keys(user).length) {

@@ -5,7 +5,6 @@ import Logoutconfirm from "@/components/logout/LogoutConfirm";
 import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt, faSignInAlt, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import useScreenType from '@/utils/useScreenType';
 import { setAuthModal } from "@/redux/slicers/authSlice";
 import style from "./navbar.module.css";
 
@@ -17,7 +16,6 @@ const ListNav = ({navigationItems, authorized}: {navigationItems: any , authoriz
     const [submenuVisible, setSubmenuVisible] = useState({}); // State to handle submenu visibility
     const authModal = useSelector((state: any) => state.auth.modal);
     const dispatch = useDispatch();
-    const screenType = useScreenType();
 
     const handleLogout = () => {
         setLogoutConfirm(true);
@@ -44,7 +42,7 @@ const ListNav = ({navigationItems, authorized}: {navigationItems: any , authoriz
     }, [authModal]);
 
     return (
-        <nav className="relative transition-all duration-300">
+        <nav className="relative transition-all duration-300 mb-0 mt-auto">
             <ul className={`
                 flex flex-row space-x-2 py-1 mx-2
                 overflow-x-auto whitespace-nowrap

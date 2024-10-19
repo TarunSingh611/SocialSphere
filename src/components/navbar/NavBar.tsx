@@ -1,5 +1,4 @@
 import ListNav from "./ListNav";
-import { useState } from "react";
 import {
     faUser,
     faRss,
