@@ -1,13 +1,10 @@
 import Button from '@mui/material/Button';
 import { authConfig } from "./AuthConfig/authConfig";
 import { Select, FormControlLabel, Checkbox, Grid, TextField, MenuItem } from '@mui/material';
-import { useState, useEffect } from 'react';
+import TimerButtonComponent from './TimerButtonComponent';
 
 const AuthformField = ({field , formik}: any) => {
     const config = authConfig?.[field?.name];
-    const [timer, setTimer] = useState(30);
-    const [disabled, setDisabled] = useState(true);
-
     if(config){
         if(config?.componentType === 'field'){
             return (
@@ -114,43 +111,8 @@ const AuthformField = ({field , formik}: any) => {
             )
         }
         else if(config?.componentType === 'timer-button'){
-
-            useEffect(() => {
-                let interval: NodeJS.Timeout | null = null;
         
-                if (timer > 0 && disabled) {
-                    interval = setInterval(() => {
-                        setTimer(t => t - 1);
-                    }, 1000);
-                } else if (timer <= 0 && disabled) {
-                    setDisabled(false);
-                    clearInterval(interval as NodeJS.Timeout);
-                }
-        
-                return () => {
-                    if (interval) {
-                        clearInterval(interval);
-                    }
-                };
-            }, [timer, disabled]);
-        
-            const handleButtonClick = () => {
-                setDisabled(true);
-                setTimer(60);
-                if (field?.action) field.action();
-            };
-
-            return(
-                <Button 
-                    className={`${field?.class}`}
-                    fullWidth
-                    type={config?.type}
-                    variant='contained'
-                    disabled = {disabled}
-                    onClick = {handleButtonClick}
-                > 
-                {disabled ? `Resend in ${timer} seconds` : config?.label} </Button>
-            )
+            return <TimerButtonComponent config={config} field={field} />;
         }
         else{
             return <></>
