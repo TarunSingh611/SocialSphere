@@ -1,0 +1,82 @@
+.commentsContainer {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 12px;
+    transition: max-height 0.3s ease-in-out;
+    max-height: 400px; /* Limit the height */
+    overflow-y: auto; /* Make it scrollable */
+}
+
+.commentsList {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.comment {
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.commentText {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.commentActions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.actionButton {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #0070f3;
+    font-weight: bold;
+}
+
+.actionButton:hover {
+    text-decoration: underline;
+}
+
+.addCommentContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.commentInput {
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.addCommentButton {
+    background-color: #0070f3;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.addCommentButton:hover {
+    background-color: #005bb5;
+}
+

@@ -10,7 +10,6 @@ const apiSetPicture = async (file: File, type: string) => {
     method: 'PUT' as HttpMethod,
     body: formData,
   };
-  console.log(options);
   return await makeApiRequest('/user/setPicture', options);
 };
 

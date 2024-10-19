@@ -1,0 +1,48 @@
+{"personalInfo": {
+    "name": "Tarun Singh",
+    "location": "Udhampur, Jammu and Kashmir, India, 182121",
+    "phone": "+917006072897",
+    "email": "thakurtarun936@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/tarunsinghrajput/"
+  },
+    "summary": "Enthusiastic Full Stack Developer Specializing in Next.js framework with proficiency in both frontend and backend development. Skilled in crafting sleek and user-centric solutions, with a passion for innovation and collaboration.",
+    "education": {
+        "college": {
+          "field": "Computer Engineering (B.E.)",
+          "institution": "Government College of Engineering and Technology, Udhampur",
+          "dates": "Aug 2019 - Sep 2023"
+        },
+        "school": {
+          "field": "X-XII(PCM)",
+          "institution": "Army Public School, Udhampur",
+          "dates": "Apr 2017 - May 2019"
+        }
+    },    
+    "experience": [
+      {
+        "title": "Software Developer",
+        "company": "BetterCommerce - Axtrum Solution Limited, Noida",
+        "dates": "Sep 2023 - Present",
+        "responsibilities": [
+          "Proactively contributed to frontend development, implementing responsive design for seamless user interaction across devices.",
+          "Delivered key features, demonstrating readiness to innovate further with continuous learning and improvement."
+        ]
+      },
+      {
+        "title": "Programmer Intern",
+        "company": "Codequotient, Mohali",
+        "dates": "Apr 2023 - Sep 2023",
+        "responsibilities": [
+          "Acquired skills in web development, progressing from foundational technologies like HTML, CSS, and JavaScript to advanced stacks like MERN (MongoDB, Express.js, React.js, Node.js).",
+          "Gained proficiency in database management with MySQL.",
+          "Expanded programming knowledge with C++ and .NET."
+        ]
+      }
+    ],
+    "skills": {
+      "advanced": ["Next.js", "Node.js (Express)", "React (Next.js)", "JavaScript"],
+      "intermediate": ["MongoDB", "MySQL", "Git"],
+      "basic": ["C++", "C#", "HTML", "CSS"]
+    }
+  }
+  

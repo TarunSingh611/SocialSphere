@@ -1,6 +1,6 @@
-import React, { useState, ChangeEvent, useRef } from "react";
+import { useState, ChangeEvent, useRef } from "react";
 import { toast } from "react-toastify";
-import { setProfilePhoto, setCoverPhoto } from "../../redux/slicers/authSlice";
+// import { setProfilePhoto, setCoverPhoto } from "../../redux/slicers/authSlice";
 import apiSetPicture from "../../api/user/apiSetPicture";
 import { useDispatch } from "react-redux";
 import AvatarEditor from "react-avatar-editor";
@@ -24,11 +24,11 @@ export default function UploadButtons() {
         toast.error(res.message);
       } else {
         toast.success(res.message);
-        dispatch(
-          pictureType === "profilePicture"
-            ? setProfilePhoto(res.picture)
-            : setCoverPhoto(res.picture)
-        );
+        // dispatch(
+        //   pictureType === "profilePicture"
+        //     ? setProfilePhoto(res.picture)
+        //     : setCoverPhoto(res.picture)
+        // );
       }
     });
   };
@@ -38,7 +38,7 @@ export default function UploadButtons() {
       editorRef.current.getImage().toBlob((blob: Blob | null) => {
         if (blob) {
 
-          const binaryData = atob(editedImage.split(',')[1]);
+          const binaryData = atob(editedImage?.split(',')[1]);
   
           const arrayBuffer = new ArrayBuffer(binaryData.length);
           const uint8Array = new Uint8Array(arrayBuffer);
@@ -79,7 +79,8 @@ export default function UploadButtons() {
     setPicType(type);
   };
 
-  return picture ? (
+  return picture ? 
+  (
     <>
       <ImageInput
         image={picture}
@@ -87,12 +88,12 @@ export default function UploadButtons() {
         editorRef={editorRef}
         onImageSubmit={handleConfirmImage}
       />
-      <button className="bg-blue-500 text-white px-4 py-2 rounded">
+      {/* <button className="bg-blue-500 text-white px-4 py-2 rounded">
         Reset
-      </button>
+      </button> */}
     </>
   ) : (
-    <div className="flex justify-around w-full my-8">
+    <div className="flex justify-around w-full my-8 gap-4">
       <label className="cursor-pointer">
         <input
           type="file"
@@ -100,7 +101,7 @@ export default function UploadButtons() {
           className="hidden"
           onChange={(e) => handleUpdateFile(e, "profilePicture")}
         />
-        <div className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer">
+        <div className="bg-blue-500 text-white text-sm px-4 py-2 rounded cursor-pointer">
           Update Profile Picture
         </div>
       </label>
@@ -111,7 +112,7 @@ export default function UploadButtons() {
           className="hidden"
           onChange={(e) => handleUpdateFile(e, "coverPhoto")}
         />
-        <div className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer">
+        <div className="bg-blue-500 text-white text-sm px-4 py-2 rounded cursor-pointer">
           Update Cover Picture
         </div>
       </label>

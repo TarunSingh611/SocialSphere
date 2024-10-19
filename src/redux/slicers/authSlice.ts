@@ -1,40 +1,33 @@
 "use client";
 import { createSlice} from "@reduxjs/toolkit";
 type State = {
-  validUser: boolean|null;
   user: any|null;
+  modal: boolean|null;
 };
 
 const initialState: State = {
-  validUser: null,
-  user: null
+  user: null,
+  modal: false
 };
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setValidUser: (state, action) => {
-      state.validUser = action.payload;
-    },
-
     setUser: (state, action) => {
         state.user = action.payload; 
+        state.modal = false
     },
-
-    setCoverPhoto: (state, action) => {
-      if (state.user) {
-        state.user.coverPhoto = action.payload;
-      }
+    clearUser: (state) => {
+        state.user = null;
+        state.modal = true
     },
-    setProfilePhoto: (state, action) => {
-      if (state.user) {
-        state.user.profilePicture = action.payload;
-      }
-    }
+    setAuthModal: (state, action) => {
+        state.modal = action.payload;
+    },
   },
 });
 
-export const { setValidUser, setUser ,setProfilePhoto, setCoverPhoto} = authSlice.actions;
+export const {  setUser , clearUser, setAuthModal } = authSlice.actions;
 
 export default authSlice.reducer;

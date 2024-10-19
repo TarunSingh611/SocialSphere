@@ -17,7 +17,7 @@ const TabbedNav = ({ tabs,defaultTab }: any) => {
             className={
               `flex-grow text-center cursor-pointer py-2 px-4 transition-colors duration-150 ` +
               (selectedTab === index
-                ? "!bg-custom-gradient !text-white" // Selected tab color
+                ? "!bg-custom-gradient !text-white !bg-blue-400" // Selected tab color
                 : "bg-gray-200 hover:bg-gray-300") // Non-selected tab color
             }
           >

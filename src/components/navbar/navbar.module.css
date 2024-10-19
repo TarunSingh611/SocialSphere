@@ -1,0 +1,140 @@
+.iconSize {
+    font-size: 20px; /* Set the desired size here */
+  }
+
+  
+
+.tabHN{
+  margin-right: 10px;
+  margin-left: 5px;
+  width: calc(100% - 20px);  
+  box-sizing: border-box;
+  border-radius: 15px;
+  font-family: monospace;
+  font-weight: bold;
+  color:#273746;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 640px) {
+  .tabHN {
+    margin-right: 5px;
+    margin-left: 5px; /* Reset margin-left for small screens */
+    width: 100%; /* Full width for small screens */
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width : auto ;
+  }
+}
+
+.tabHN:hover{
+  cursor: pointer;
+  background-color: #c0c1c3; 
+}
+
+.liNav{
+  right:0;
+  margin:5px;
+  padding: 2px;
+  margin-left:10px;
+  width:calc(100% - 10px);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-image: transparent;
+  transition: background-position-x 0.7s ease-in-out;
+
+}
+
+.selected {
+  font-weight: bold;
+  cursor: default;
+  margin-top:2px;
+  background: linear-gradient(45deg, #0078d4 0%, #004578 100%);
+  background-position-x: 100%;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: background-position-x 0.7s ease-in-out;
+}
+
+
+.liNavLogoutSelected{
+  padding: 2px;
+  margin-left:10px;
+  width:calc(100% - 10px);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-weight: bold;
+  cursor: default;
+  margin-top:2px;
+  background: linear-gradient(45deg, #FF0000 0%, #990000 100%);
+  background-position-x: 100%;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: background-position-x 0.7s ease-in-out;
+}
+.liNavSignInSelected{
+  padding: 2px;
+  margin-left:10px;
+  width:calc(100% - 10px);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-weight: bold;
+  cursor: default;
+  margin-top:2px;
+  background: linear-gradient(45deg, #00ff4c 0%, #144202 100%);
+  background-position-x: 100%;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: background-position-x 0.7s ease-in-out;
+}
+
+@media screen and (max-width: 640px) {
+  .liNav {
+    margin-left: 0; /* Reset margin-left for small screens */
+    width: 100%; /* Full width for small screens */
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width : auto ;
+  }
+}
+.liNavLogoutSelected .tabHN{
+  color:azure ;
+}
+
+.selected .tabHN:hover{
+  background: transparent;
+}
+
+.selected .tabHN{
+  color:azure ;
+}
+
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.scrollbarHide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbarHide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollable {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
+}
+
+.scrollbarVisible {
+  scrollbar-width: thin; /* Firefox */
+}
+
+.scrollbarVisible::-webkit-scrollbar {
+  height: 6px; /* Chrome, Safari, Opera */
+}
+
+.scrollbarVisible::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 10px;
+}

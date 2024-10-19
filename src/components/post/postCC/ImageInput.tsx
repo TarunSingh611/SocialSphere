@@ -49,7 +49,7 @@ const ImageInput: React.FC<ImageInputProps> = ({
   }, [image]);
 
   return (
-    <div className="mb-4">
+    <div className="mb-4 sm:p-6">
       <label
         htmlFor="image"
         className="block text-sm font-medium text-gray-600"
@@ -129,7 +129,7 @@ const ImageInput: React.FC<ImageInputProps> = ({
             +
           </button>
         </div>
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-row md:flex-row">
           <button
             className="m-2 bg-blue-500 text-white py-2 px-3 rounded-md"
             onClick={handleButtonClick}

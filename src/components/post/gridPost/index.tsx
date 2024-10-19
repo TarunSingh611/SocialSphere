@@ -1,6 +1,6 @@
 import MiniCard from "@/components/post/miniCard"
-import { useEffect, useState } from "react"
-import PostCard from "../userPost/PostCard"
+import { useState } from "react"
+import PostCard from "@/components/post/PostCard"
 const GridPost = ({ posts }: { posts: any }) => {
 
   const [LocalPosts, setLocalPosts] = useState(posts)
@@ -20,7 +20,7 @@ const GridPost = ({ posts }: { posts: any }) => {
     <PostCard post={Card} setPost={setPost}/>
     <button onClick={() => setCard(null)} className="bg-red-500 w-full text-white px-4 py-2 rounded">Close</button>
   </>
-  ) : (<div className="grid grid-cols-1 sm:grid-cols-3 ">
+  ) : (<div className="grid grid-cols-3 ">
     {
       LocalPosts && (
         LocalPosts.map((post: any) => (

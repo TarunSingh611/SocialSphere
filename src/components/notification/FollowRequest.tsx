@@ -34,7 +34,7 @@ const FollowRequest: React.FC<FollowRequestProps> = ({
      apiRejectReq(cardId)
      .then((res:any)=>{
       if(res.success){
-        console.log(requests, cardId)
+  
         dispatch(setRequests(requests.filter((request:any) => request?.from?._id !== cardId)))
       }
      })

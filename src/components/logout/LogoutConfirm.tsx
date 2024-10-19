@@ -1,26 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { removeToken } from "@/services/auth";
-import { setValidUser } from "@/redux/slicers/authSlice";
 import { useDispatch } from "react-redux";
-import { setCurtainRaised } from "@/redux/ReduxSlicer";
 import { useRouter } from "next/navigation";
+import { setAuthModal, setUser } from "@/redux/slicers/authSlice";
+import { toast } from "react-toastify";
+import axios from "axios";
+import Loader from "../misc/Loader";
 interface SearchOverlayProps {
   onClose: () => void;
 }
 
 const LogoutOverlay: React.FC<SearchOverlayProps> = ({onClose}) => {
-    const dispatch = useDispatch();
-    const router = useRouter();
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useDispatch();
+  const router = useRouter();
 
 const handleCancel = () => {
     onClose();
 }
 const handleConfirmLogout = () => {
-    localStorage.clear();
-    dispatch(setValidUser(false));
-    removeToken();
-    dispatch(setCurtainRaised(false));
-    router.push("/");
+  const logout = async () => {
+    const result:any = await axios.delete("/api/auth/logout");
+
+    if (result?.data?.statusCode === 200) {
+        toast.success(result?.data?.message);
+        dispatch(setUser(null));
+        setIsLoading(false);
+        router.push("/");
+        dispatch(setAuthModal(true))
+        onClose();
+    }
+  }
+  setIsLoading(true);
+  logout()
 }
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50">
@@ -40,7 +54,9 @@ const handleConfirmLogout = () => {
               </div>
             </div>
           </div>
+          { isLoading && <Loader />}
         </div>
+
       );
 };
 

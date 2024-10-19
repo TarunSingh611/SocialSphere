@@ -57,11 +57,11 @@ const Security: React.FC<SecurityProps> = ({ user, onUpdateProfile }) => {
           } else if (res.statusCode === 404) {
             toast.error(res.message);
           } else {
-            toast.error("unkopnwn error");
+            toast.error("unknown error");
           }
         })
         .catch(() => {
-          toast.error("unkopnwn error");
+          toast.error("unknown error");
         });
     },
   });
@@ -109,7 +109,7 @@ const Security: React.FC<SecurityProps> = ({ user, onUpdateProfile }) => {
               <button
                 type="button"
                 onClick={() => setIsEditing(false)}
-                className="bg-gray-300 text-gray-700 px-4 py-2 rounded"
+                className="bg-gray-300 text-gray-700 px-4 py-2 rounded  mr-2"
               >
                 Cancel
               </button>

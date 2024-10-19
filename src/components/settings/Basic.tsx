@@ -1,11 +1,11 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
 
 interface BasicProps {
   user: {
-    fullName?: string;
+    firstName?: string;
+    lastName?: string;
     username?: string;
     bio?: string;
   };
@@ -13,7 +13,8 @@ interface BasicProps {
 }
 
 const validationSchema = Yup.object().shape({
-  fullName: Yup.string().required("Full name is required"),
+  firstName : Yup.string().required("First name is required"),
+  lastName : Yup.string().required("Last name is required"),
   username: Yup.string().required("Username is required"),
   bio: Yup.string(),
 });
@@ -56,11 +57,10 @@ const Input: React.FC<{
 );
 
 const Basic: React.FC<BasicProps> = ({ user, onUpdateProfile }) => {
-  const dispatch = useDispatch();
-
   const formik = useFormik({
     initialValues: {
-      fullName: user?.fullName || "",
+      firstName: user?.firstName || "",
+      lastName : user?.lastName || "",
       username: user?.username || "",
       bio: user?.bio || "",
     },
@@ -79,7 +79,7 @@ const Basic: React.FC<BasicProps> = ({ user, onUpdateProfile }) => {
       <h2 className="text-xl font-semibold my-2">Profile Information</h2>
 
       <form onSubmit={formik.handleSubmit}>
-        {(["fullName", "username", "bio"] as const).map((field) => (
+        {(["firstName", "lastName", "username", "bio"] as const).map((field) => (
           <Input
             key={field}
             field={field}

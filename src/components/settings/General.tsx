@@ -45,7 +45,7 @@ const validationSchema = Yup.object().shape({
 const General: React.FC<GeneralProps> = ({ user, onUpdateProfile }) => {
   const formik = useFormik({
     initialValues: {
-      gender: user?.gender || "Female",
+      gender: user?.gender || "",
       birthday: user?.birthday ?  formatDate(user?.birthday) : '0000-00-00',
       website: user?.website || '',
       location: {
