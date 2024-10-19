@@ -39,7 +39,7 @@ const UnderConstruction = () => {
           >
             🚧 Under Construction 🚧
           </h1>
-          <p className="text-xl text-slate-300">We're building something awesome!</p>
+          <p className="text-xl text-slate-300">We&apos;re building something awesome!</p>
         </div>
 
         {/* Animated construction elements */}
@@ -60,7 +60,7 @@ const UnderConstruction = () => {
           <h2 className="text-2xl font-bold text-yellow-400 mb-4">Work in Progress</h2>
           <p className="text-slate-300 mb-4">
             Our team of digital craftsmen is hard at work building this page.
-            Check back soon to see what we're creating!
+            Check back soon to see what we&apos;re creating!
           </p>
           <div className="flex justify-center gap-4">
             <div className="h-2 w-24 bg-yellow-400 rounded animate-pulse"></div>

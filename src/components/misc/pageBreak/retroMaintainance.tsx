@@ -71,7 +71,7 @@ const MaintenanceMode = () => {
 
         <div className="text-center mt-8">
           <p className="text-green-400 mb-4">
-            We're performing scheduled maintenance to improve your experience.
+            We&apos;re performing scheduled maintenance to improve your experience.
           </p>
           <div className="inline-flex items-center gap-2 text-green-500">
             <Monitor className="w-4 h-4" />

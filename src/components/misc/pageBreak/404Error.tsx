@@ -60,7 +60,7 @@ const Error404 = () => {
 
         <h2 className="text-3xl font-bold text-white mb-4">Lost in Space</h2>
         <p className="text-indigo-200 mb-8">
-          Houston, we have a problem! The page you're looking for has drifted into deep space.
+          Houston, we have a problem! The page you&apos;re looking for has drifted into deep space.
         </p>
 
         {/* Navigation elements */}

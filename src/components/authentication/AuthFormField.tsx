@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 
 const AuthformField = ({field , formik}: any) => {
     const config = authConfig?.[field?.name];
+    const [timer, setTimer] = useState(30);
+    const [disabled, setDisabled] = useState(true);
 
     if(config){
         if(config?.componentType === 'field'){
@@ -112,9 +114,6 @@ const AuthformField = ({field , formik}: any) => {
             )
         }
         else if(config?.componentType === 'timer-button'){
-
-            const [timer, setTimer] = useState(30);
-            const [disabled, setDisabled] = useState(true);
 
             useEffect(() => {
                 let interval: NodeJS.Timeout | null = null;
