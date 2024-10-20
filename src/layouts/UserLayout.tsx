@@ -4,9 +4,11 @@ import { useSelector , useDispatch } from "react-redux";
 import SignInSide from "@/components/authentication/SideAuth";
 import { setAuthModal } from '@/redux/slicers/authSlice'
 import useFetchAndSetUser from "@/hooks/useFetchAndSetUser";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const UserLayout = ({ children, authorized }: { children: React.ReactNode, authorized: number }) => {
     const dispatch = useDispatch()
+    const isMobile = useIsMobile()
     const authModal = useSelector((state: any) => state.auth.modal);
     const user = useSelector((state: any) => state.auth.user);
     useFetchAndSetUser()
@@ -15,7 +17,7 @@ const UserLayout = ({ children, authorized }: { children: React.ReactNode, autho
     }
 
     return (
-        <div className="flex flex-col sm:flex-row h-screen">
+        <div className="flex flex-col-reverse sm:flex-row h-screen">
             <div className="w-auto bg-gray-200">
                 <NavBar authorized={authorized}/>
             </div>

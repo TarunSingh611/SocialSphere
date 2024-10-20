@@ -9,6 +9,7 @@ import {
     faCog
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const navigationItems = [
     { order: 1, path: "/profile", label: "Profile", icon: faUser, subItems: [] },
@@ -20,11 +21,21 @@ const navigationItems = [
     { order: 7, path: "/setting", label: "Settings", icon: faCog, subItems: [] },
 ];
 
-const NavBar = ({ authorized = 0 }) => {
-    const user = useSelector((state: any) => state.auth.user);
+const mobileNavigationItems = [
+    { order: 1, path: "/profile", label: "Profile", icon: faUser, subItems: [] },
+    { order: 2, path: "/feed", label: "Feed", icon: faRss, subItems: [] },
+    { order: 3, path: "/post", label: "Post", icon: faPen, subItems: [] },
+    { order: 4, path: "/", label: "Explore", icon: faSearch, subItems: [] },
+    { order: 7, path: "/setting", label: "Settings", icon: faCog, subItems: [] },
+];
 
+
+const NavBar = ({authorized = 0 }) => {
+    const user = useSelector((state: any) => state.auth.user);
+    const isMobile = useIsMobile()
     return (
-        <ListNav navigationItems={navigationItems} authorized={!!user} />
+        isMobile ? <ListNav navigationItems={mobileNavigationItems} authorized={!!user} />
+        : <ListNav navigationItems={navigationItems} authorized={!!user} />
     );
 }
 

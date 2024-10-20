@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import { setUser, clearUser,  setProfilePhoto, setCoverPhoto  } from '@/redux/slicers/authSlice'; // Replace with your actual path
+import { setUser, clearUser,  setProfilePhoto, setCoverPhoto, setAuthModal  } from '@/redux/slicers/authSlice'; // Replace with your actual path
 import axios from 'axios';
 
 const useFetchAndSetUser = () => {
@@ -8,7 +8,10 @@ const useFetchAndSetUser = () => {
   const userId = useSelector((state: any) => state.auth.userId);
 
   useEffect(() => {
-    if(!userId) {return;}
+    if(!userId) {
+      dispatch(setAuthModal(true))
+      return;
+    }
 
     const fetchUser = async () => {
       try {
