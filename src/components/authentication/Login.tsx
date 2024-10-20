@@ -4,8 +4,7 @@ import axios from "axios";
 import AuthForm from "./AuthForm";
 import { toast } from "react-toastify";
 import Loader from "../misc/Loader";
-import { setToken } from "@/services/auth";
-import { setAuthModal, setUser } from "@/redux/slicers/authSlice";
+import { setAuthModal, setUserId } from "@/redux/slicers/authSlice";
 import { useDispatch } from "react-redux";
 
 export default function Login({setAuthType, onClose, setUserData }: any) {
@@ -64,7 +63,7 @@ export default function Login({setAuthType, onClose, setUserData }: any) {
       const result = await axios.post('/api/auth/login', {data});
       if (result?.data?.statusCode === 200) {
         toast.success(result?.data?.message);
-        dispatch(setUser(result?.data?.user));
+        dispatch(setUserId(result?.data?.user?._id));
         dispatch(setAuthModal(false))
         setIsLoading(false)
         if (onClose) {  

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { removeToken } from "@/services/auth";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
-import { setAuthModal, setUser } from "@/redux/slicers/authSlice";
+import { setAuthModal, setUser, setUserId } from "@/redux/slicers/authSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Loader from "../misc/Loader";
@@ -27,6 +26,7 @@ const handleConfirmLogout = () => {
     if (result?.data?.statusCode === 200) {
         toast.success(result?.data?.message);
         dispatch(setUser(null));
+        dispatch(setUserId(null));
         setIsLoading(false);
         router.push("/");
         dispatch(setAuthModal(true))

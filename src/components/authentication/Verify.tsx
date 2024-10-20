@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import Loader from '../misc/Loader';
 import { setToken } from '@/services/auth';
-import { setUser } from '@/redux/slicers/authSlice';
+import { setUserId } from '@/redux/slicers/authSlice';
 import { useDispatch } from 'react-redux';
 
 export default function Verify({ userData, setAuthType, onClose }: any) {
@@ -34,6 +34,13 @@ export default function Verify({ userData, setAuthType, onClose }: any) {
           resendCode();
         }
       },
+      {
+        id : "TryLogin",
+        name: "TryLogin",
+        action : () => {
+          setAuthType("signIn");
+        }
+      }
     ],
   };
 
@@ -82,7 +89,7 @@ export default function Verify({ userData, setAuthType, onClose }: any) {
         if(result?.data?.statusCode === 200) {
           toast.success(result?.data?.message);
           setToken(result?.data?.token);
-          dispatch(setUser(result?.data?.user));
+          dispatch(setUserId(result?.data?.user?._id));
           setIsLoading(false)
           if (onClose) {
             onClose();

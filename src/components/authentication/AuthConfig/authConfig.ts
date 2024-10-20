@@ -104,6 +104,11 @@ export const authConfig = {
       label: "Already have an account?",
       type: "text",
     },
+    TryLogin:{
+      componentType : 'link',
+      label: "Try Login ?",
+      type: "text",
+    },
     signup:{
       componentType: 'button',
       label: "Sign Up",

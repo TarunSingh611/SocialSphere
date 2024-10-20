@@ -6,15 +6,16 @@ import { useSelector } from "react-redux";
 import FollowButton from "../followButton/FollowButton";
 
 const ProfileCard = ({ user, setUser = () => { }, self = {} }: any) => {
+  const {profilePhoto, coverPhoto} = useSelector((state: any) => state.auth);
   return (user &&
     <div className="bg-whiterounded-lg relative shadow-md p-6">
       <div className="absolute bg-gray-200 left-0 top-0  w-full h-48 sm:h-32 md:h-2/3 lg:h-32 !object-cover">
         <img
           className="w-full h-full object-cover"
           src={
-            user?.coverPhoto
+            coverPhoto
               ? secrets.NEXT_PUBLIC_PROFILE_IMAGE_URL +
-              user?.coverPhoto
+              coverPhoto
               : "/defaulters/Cover.webp"
           }
           alt="Profile"
@@ -27,9 +28,9 @@ const ProfileCard = ({ user, setUser = () => { }, self = {} }: any) => {
             <img
               className="sm:w-32 sm:h-32 p-8 sm:p-0 mx-auto md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover"
               src={
-                user?.profilePicture
+                profilePhoto
                   ? secrets.NEXT_PUBLIC_PROFILE_IMAGE_URL +
-                  user?.profilePicture
+                  profilePhoto
                   : secrets.ProfilePicture(user?.gender)
               }
               alt="Profile"
@@ -76,6 +77,7 @@ const ProfileSearchCard = ({ user }: any) => {
   const router = useRouter();
   const [userLocal, setUser] = useState({} as any);
   const self = useSelector((state: any) => state.auth.user);
+  const {profilePhoto} = useSelector((state: any) => state.auth);
   const handleCardClick = () => {
     router.push(`/profile/${user._id}`);
   };
@@ -94,9 +96,9 @@ const ProfileSearchCard = ({ user }: any) => {
         <img
           className="w-1/2 h-1/2 object-fit rounded-full"
           src={
-            userLocal?.profilePicture
+            profilePhoto
               ? secrets.NEXT_PUBLIC_PROFILE_IMAGE_URL +
-              userLocal?.profilePicture
+              profilePhoto
               : secrets.ProfilePicture(userLocal?.gender)
           }
           alt="Profile"

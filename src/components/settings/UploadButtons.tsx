@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, useRef } from "react";
 import { toast } from "react-toastify";
-// import { setProfilePhoto, setCoverPhoto } from "../../redux/slicers/authSlice";
+import { setProfilePhoto, setCoverPhoto } from "../../redux/slicers/authSlice";
 import apiSetPicture from "../../api/user/apiSetPicture";
 import { useDispatch } from "react-redux";
 import AvatarEditor from "react-avatar-editor";
@@ -24,13 +24,15 @@ export default function UploadButtons() {
         toast.error(res.message);
       } else {
         toast.success(res.message);
-        // dispatch(
-        //   pictureType === "profilePicture"
-        //     ? setProfilePhoto(res.picture)
-        //     : setCoverPhoto(res.picture)
-        // );
+        dispatch(
+          pictureType === "profilePicture"
+            ? setProfilePhoto(res.picture)
+            : setCoverPhoto(res.picture)
+        );
       }
-    });
+    }
+  )
+    ;
   };
 
   const handleConfirmImage = (editedImage: string) => {
